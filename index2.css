@@ -1,0 +1,188 @@
+*
+{
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    font-family: "Lucida Sans", sans-serif;
+}
+
+.grid_con
+{
+    display: grid;
+    height: 100vh;
+
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: .5fr repeat(3,1.5fr).5fr;
+    grid-template-areas: 
+        "top_hs top_hs top_hs top_hs"
+        "lbar midcon midcon rbar"
+        "lbar midcon midcon rbar"
+        "lbar midcon midcon rbar"
+        "footer footer footer footer";
+    grid-gap: 5px;
+}
+
+.top_hs
+{
+    top: 0;
+    position: fixed;
+    width: 100%;
+    overflow:hidden;
+
+    background-color: bisque;
+
+    grid-area: top_hs;
+
+    padding: 15px;
+    text-align: center;
+}
+
+.top_hs input[type=text]
+  {
+    border-radius: 3px;
+  }
+
+.lbar
+{
+    margin-top: 20px;
+    padding: 5px;
+
+    grid-area: lbar;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .2fr 1.3fr;
+    grid-template-areas: 
+        "grid_lbar"
+        "grid_lbar2";
+
+    grid-gap: 5px;
+}
+
+.grid_lbar
+{
+    margin-top: 25px;
+    grid-area: grid_lbar;
+
+    text-align: center;
+}
+
+.grid_lbar2
+{
+    list-style-type: none;
+    grid-area: grid_lbar2;
+    padding: 0;
+    text-align: center;
+}
+
+.grid_lbar2 li
+{
+    background-color: #F3B95F;
+    border-radius: 3px;
+    padding: 5px;
+    margin: 10px;
+  
+    text-align: center;
+}
+
+.grid_lbar2 li a
+{
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+}
+
+.midcon
+{
+    grid-area: midcon;
+
+    overflow: scroll;
+}
+
+.img1
+{
+    margin-top: 25px;
+
+    max-width: 100%;
+    height: auto;
+}
+
+.msg1
+{
+    margin-top: 0px;
+    margin-bottom: 25px;    
+}
+
+.rbar
+{
+    grid-area: rbar;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .2fr 1.3fr;
+    grid-template-areas: 
+        "grid_rbar"
+        "grid_rbar2";
+
+    grid-gap: 5px;
+
+    margin-top: 20px;
+    padding: 5px;
+}
+
+.grid_rbar
+{
+    grid-area: grid_rbar;
+
+    text-align: center;
+    margin-top: 25px;
+}
+
+.grid_rbar2
+{
+    grid-area: grid_rbar2;
+
+    text-align: center;
+    padding: 0px;
+}
+
+.grid_rbar2 details
+{
+    padding: 10px;
+}
+
+.footer
+{
+    background-color: bisque;
+    grid-area: footer;
+
+    padding: 15px;
+    font-size: 12px;   
+
+}
+.footer div
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer ul
+  {    
+    list-style-type: none;
+  }
+
+@media only screen and (max-width: 600px) {
+    .grid_con
+    {
+        grid-template-columns: 1fr;
+        grid-template-rows: .5fr 1fr 3fr 1fr .5fr;
+        grid-template-areas: 
+            "top_hs"
+            "lbar"
+            "midcon"
+            "rbar"
+            "footer";
+    }
+    
+}
